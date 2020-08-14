@@ -1,0 +1,16 @@
+import pandas as pd 
+import pymongo 
+mongo_uri = "mongodb://localhost:27017/"
+client = pymongo.MongoClient(mongo_uri)
+client.list_database_names()
+
+db = client.local
+db.list_collection_names()
+GoalsType=db.matches_events_v01.aggregate([
+{'$project':{"_id":0,"playerId":1,"matchId":1,"eventId":1,"team_id":1,"eventName":1,"subEventName":1,"Tag_1_Meaning":1}
+},
+{'$match':{"Tag_1_Meaning" : "Goal" }
+}
+])
+GoalsType_df = pd.DataFrame(GoalsType)
+print(GoalsType_df)

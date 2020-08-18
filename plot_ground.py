@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 def draw_ground():
 
     fig,ax = plt.subplots(figsize=(10.4,6.8))
-    ax.axis('off') # hides the x and y ticks
+    # hides the x and y ticks
+    ax.axis('off') 
 
 
     #side and goal lines

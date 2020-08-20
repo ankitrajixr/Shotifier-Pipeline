@@ -13,4 +13,5 @@ GoalsType=db.matches_events_v01.aggregate([
 }
 ])
 GoalsType_df = pd.DataFrame(GoalsType)
+# print(GoalsType_df)
 print(GoalsType_df)
